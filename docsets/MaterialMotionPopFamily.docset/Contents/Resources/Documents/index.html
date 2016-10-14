@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MaterialMotionPopFamily  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="MaterialMotionPopFamily  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">MaterialMotionPopFamily Docs</a> (21% documented)</p>
+        <p class="header-right"><a href="https://github.com/material-motion/material-motion-family-pop-swift"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">MaterialMotionPopFamily Reference</a>
+        <img id="carat" src="img/carat.png" />
+        MaterialMotionPopFamily  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/SpringConfiguration.html">SpringConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SpringTo.html">SpringTo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/POPProperty.html">POPProperty</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#pop-material-motion-family-written-in-swift' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='pop-material-motion-family-written-in-swift'>POP Material Motion Family written in Swift</h1>
+
+<p><a href="https://travis-ci.org/material-motion/material-motion-family-pop-swift"><img src="https://travis-ci.org/material-motion/material-motion-family-pop-swift.svg?branch=develop" alt="Build Status"></a>
+<a href="https://codecov.io/gh/material-motion/material-motion-family-pop-swift"><img src="https://codecov.io/gh/material-motion/material-motion-family-pop-swift/branch/develop/graph/badge.svg" alt="codecov"></a></p>
+
+<p>The POP Material Motion family provides a bridge between
+<a href="https://github.com/facebook/pop">Facebook&rsquo;s POP library</a> and the
+<a href="https://github.com/material-motion/material-motion-runtime-objc">Material Motion runtime</a>.</p>
+<a href='#supported-languages' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='supported-languages'>Supported languages</h2>
+
+<ul>
+<li>Swift 3</li>
+<li>Objective-C</li>
+</ul>
+<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
+
+<p><code>SpringTo</code> uses POP springs to animate properties using spring physics driven on the main thread of
+the application.</p>
+
+<p>For example, you might use a SpringTo plan to move a view&rsquo;s position to a specific position on
+screen:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">springTo</span> <span class="o">=</span> <span class="kt">SpringTo</span><span class="p">(</span><span class="o">.</span><span class="n">layerPosition</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">scheduler</span><span class="o">.</span><span class="nf">addPlan</span><span class="p">(</span><span class="n">springTo</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
+</code></pre>
+
+<p>SpringTo supports the properties included in the POPProperty enum. Unlike POP, SpringTo does not
+presently support custom key paths.
+<a href="https://github.com/material-motion/material-motion-family-pop-swift/issues/19">Read the feature request</a>
+for supporting custom key paths.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#installation-with-cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='installation-with-cocoapods'>Installation with CocoaPods</h3>
+
+<blockquote>
+<p>CocoaPods is a dependency manager for Objective-C and Swift libraries. CocoaPods automates the
+process of using third-party libraries in your projects. See
+<a href="https://guides.cocoapods.org/using/getting-started.html">the Getting Started guide</a> for more
+information. You can install it with the following command:</p>
+<pre class="highlight plaintext"><code>gem install cocoapods
+</code></pre>
+</blockquote>
+
+<p>Add <code>MaterialMotionPopFamily</code> to your <code>Podfile</code>:</p>
+<pre class="highlight plaintext"><code>pod 'MaterialMotionPopFamily'
+</code></pre>
+
+<p>Then run the following command:</p>
+<pre class="highlight plaintext"><code>pod install
+</code></pre>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='usage'>Usage</h3>
+
+<p>Import the framework:</p>
+<pre class="highlight plaintext"><code>@import MaterialMotionPopFamily;
+</code></pre>
+
+<p>You will now have access to all of the APIs.</p>
+<a href='#example-apps-unit-tests' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example-apps-unit-tests'>Example apps/unit tests</h2>
+
+<p>Check out a local copy of the repo to access the Catalog application by running the following
+commands:</p>
+<pre class="highlight plaintext"><code>git clone https://github.com/material-motion/material-motion-family-pop-swift.git
+cd material-motion-family-pop-swift
+pod install
+open MaterialMotionPopFamily.xcworkspace
+</code></pre>
+<a href='#guides' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='guides'>Guides</h2>
+
+<ol>
+<li><a href="#how-to-animate-a-property-with-a-springto-plan">How to animate a property with a SpringTo plan</a></li>
+<li><a href="#how-to-configure-spring-behavior">How to configure spring behavior</a></li>
+</ol>
+<a href='#how-to-animate-a-property-with-a-springto-plan' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='how-to-animate-a-property-with-a-springto-plan'>How to animate a property with a SpringTo plan</h3>
+
+<p>Code snippets:</p>
+
+<p><strong><em>In Objective-C:</em></strong></p>
+<pre class="highlight objective_c"><code><span class="n">MDMSpringTo</span> <span class="o">*</span><span class="n">springTo</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MDMSpringTo</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithProperty</span><span class="p">:</span><span class="n">MDMPOPProperty</span><span class="o">&lt;</span><span class="err">#</span><span class="n">property</span> <span class="n">name</span><span class="err">#</span><span class="o">&gt;</span>
+                                                  <span class="nf">destination</span><span class="p">:</span><span class="o">&lt;</span><span class="err">#</span><span class="n">Destination</span> <span class="n">value</span><span class="err">#</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">scheduler</span> <span class="nf">addPlan</span><span class="p">:</span><span class="n">springTo</span> <span class="nf">to</span><span class="p">:</span><span class="o">&lt;</span><span class="err">#</span><span class="n">Object</span><span class="err">#</span><span class="o">&gt;</span><span class="p">];</span>
+</code></pre>
+
+<p><strong><em>In Swift:</em></strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">springTo</span> <span class="o">=</span> <span class="kt">SpringTo</span><span class="p">(</span><span class="o">.&lt;</span><span class="err">#</span><span class="n">property</span> <span class="n">name</span><span class="err">#</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">Destination</span> <span class="n">value</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">scheduler</span><span class="o">.</span><span class="nf">addPlan</span><span class="p">(</span><span class="n">springTo</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">Object</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre>
+<a href='#how-to-configure-spring-behavior' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='how-to-configure-spring-behavior'>How to configure spring behavior</h3>
+
+<p>A spring&rsquo;s behavior can be configured by setting a <code>SpringConfiguration</code> object on the SpringTo
+instance.</p>
+
+<p>Code snippets:</p>
+
+<p><strong><em>In Objective-C:</em></strong></p>
+<pre class="highlight objective_c"><code><span class="n">springTo</span><span class="p">.</span><span class="n">configuration</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MDMSpringConfiguration</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithTension</span><span class="p">:</span><span class="o">&lt;</span><span class="err">#</span><span class="n">tension</span><span class="err">#</span><span class="o">&gt;</span>
+                                                                <span class="nf">friction</span><span class="p">:</span><span class="o">&lt;</span><span class="err">#</span><span class="n">friction</span><span class="err">#</span><span class="o">&gt;</span><span class="p">];</span>
+</code></pre>
+
+<p><strong><em>In Swift:</em></strong></p>
+<pre class="highlight swift"><code><span class="n">springTo</span><span class="o">.</span><span class="n">configuration</span> <span class="o">=</span> <span class="kt">SpringConfiguration</span><span class="p">(</span><span class="nv">tension</span><span class="p">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="n">tension</span><span class="err">#</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">friction</span><span class="p">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="n">friction</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre>
+<a href='#contributing' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contributing'>Contributing</h2>
+
+<p>We welcome contributions!</p>
+
+<p>Check out our <a href="https://github.com/material-motion/material-motion-family-pop-swift/milestones">upcoming milestones</a>.</p>
+
+<p>Learn more about <a href="https://material-motion.gitbooks.io/material-motion-team/content/">our team</a>,
+<a href="https://material-motion.gitbooks.io/material-motion-team/content/community/">our community</a>, and
+our <a href="https://material-motion.gitbooks.io/material-motion-team/content/essentials/">contributor essentials</a>.</p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>Licensed under the Apache 2.0 license. See LICENSE for details.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/material-motion/material-motion-family-pop-swift" target="_blank" rel="external">The Material Motion Authors</a>. All rights reserved. (Last updated: 2016-10-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
